@@ -3,17 +3,18 @@ h1, h2 {
 }
 
 p {
-    font-family: Open Sans, sans-serif;
-    display: inline;
+   font-family: Open Sans, sans-serif; 
+   display: inline-block;
 }
 
 body {
-    color: darkblue;
+    color: DarkBlue;
     margin: 10px 50px;
     max-width: 950px;
     background-color: ivory;
 }
 
-
-
+img {
+    vertical-align: middle;
+}
 

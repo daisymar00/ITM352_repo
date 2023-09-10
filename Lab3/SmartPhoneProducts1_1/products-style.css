@@ -11,7 +11,8 @@ main {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around; 
-    background: url(images/phone_globe.jpg) no-repeat 50% center;
+    background-image: no-repeat url("images/phone_globe.png");
+    background-position: 0 center;
 }
 
 /* Form styling */
@@ -30,4 +31,17 @@ h1, h2{
 body > div {
     border: 5px solid black;
     display: flex;
+}
+
+.rotate img {
+  animation: rotation .3s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
