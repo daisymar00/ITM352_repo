@@ -1,0 +1,47 @@
+h1, h2 {
+    font-family: Oswald, sans-serif;
+}
+
+p {
+   font-family: Open Sans, sans-serif; 
+   display: inline-block;
+}
+
+body {
+    color: DarkBlue;
+    margin: auto;
+    max-width: 950px;
+    background-color: ivory;
+
+}
+
+img {
+    vertical-align: middle;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    column-gap: 10px;
+    justify-content: space-between;
+}
+
+li {
+    display: inline;
+    size: 950px;
+}
+
+.container {
+    display: flex;
+    column-gap: 10px;
+    justify-content: space-between; 
+}
+
+.column {
+    width: 300px;
+    padding: 10px;
+    box-sizing: border-box; 
+}
+
