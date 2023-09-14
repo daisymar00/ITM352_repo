@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="products-style2.css">
+    <style id="localStyle"></style>
+    <title>Smartphone Products</title>
+    <script>
+        var store_name = "Daisy Martinez";
+        hits_span.innerHTML = hits; 
+        spins_span.innerHTML = spins;
+    </script>
+</head>
+
+<body onload="hits_span.innerHTML = hits; spins_span.innerHTML = spins;">
+    <h1>
+        <p style="text-align: center; font-weight: bold;">
+            Hits:<span id="hits_span">0</span>
+            Spins:<span id="spins_span">0</span>
+        </p>
+    </h1>
+    <h1>
+        <Script>
+            document.write(store_name+"'s Used Smart Phone Store");
+        </Script>
+    </h1>
+
+    <div>
+        <main>
+            <section class="item" onmouseover="changeClassName(this); spins_span.innerHTML = spins++;" 
+            onclick="resetClassName(this); hits_span.innerHTML = hits++;">
+                <h2>HTC</h2>
+                <p>&dollar;40.00</p>
+                <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg"/>
+            </section>
+            <section class="item" onmouseover="changeClassName(this); spins_span.innerHTML = spins++;" 
+            onclick="resetClassName(this); hits_span.innerHTML = hits++;">
+                <h2>Apple</h2>
+                <p>&dollar;75.00</p>
+                <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg"/>
+            </section>
+            <section class="item" onmouseover="changeClassName(this); spins_span.innerHTML = spins++;" 
+            onclick="resetClassName(this); hits_span.innerHTML = hits++;">
+                <h2>Nokia</h2>
+                <p>&dollar;35.00</p>
+                <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg"/>
+            </section>
+            <section class="item" onmouseover="changeClassName(this); spins_span.innerHTML = spins++;" 
+            onclick="resetClassName(this); hits_span.innerHTML = hits++;">
+                <h2>Samsung</h2>
+                <p>&dollar;45.00</p>
+                <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg"/>
+            </section>
+            <section class="item" onmouseover="changeClassName(this); spins_span.innerHTML = spins++;" 
+            onclick="resetClassName(this); hits_span.innerHTML = hits++;">
+                <h2>Blackberry</h2>
+                <p>&dollar;10.00</p>
+                <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg"/>
+            </section>
+            <input id="speedSlider" type="range" min="0.1" max="5" step="0.1" style="direction: rtl;" onchange="updateAnimationSpeed()">
+        </main>
+        
+        <script>
+            function changeClassName(element) {
+                element.className = 'item rotate';
+            }
+            function resetClassName(element) {
+                element.className = 'item';
+            }
+            function updateAnimationSpeed() {
+                var speedSlider = document.getElementById("speedSlider");
+                var localStyle = document.getElementById("localStyle");
+                var animationDuration = speedSlider.value + 's';
+                localStyle.innerHTML = '.rotate img { animation-duration: ' + animationDuration + '; }';
+            }
+        </script>
+    </div>
+</body>
+
+<footer>
+    <h1>
+        <Script>
+            document.write("Your One Stop Phone Shop for Used Phones - "+store_name+"'s");
+            let hits = 0;
+            let spins = 1;
+
+            function updateHits(element) {
+                hits++;
+                document.getElementById("hits_span").innerHTML = hits;
+            }
+
+            function updateSpins(element) {
+                spins++;
+                document.getElementById("spins_span").innerHTML = spins;
+        }
+        </Script>
+    </h1>
+</footer>
+
+</html>
+
