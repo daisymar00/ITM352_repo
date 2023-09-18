@@ -6,15 +6,12 @@ p {
    font-family: Open Sans, sans-serif; 
 }
 
+/* change background color to black and font to yellow */
 body {
-    color: DarkBlue;
+    color: yellow;
     margin: auto;
     max-width: 950px;
-    background-color: ivory;
-}
-
-img {
-    margin-left: 0%;
+    background-color: black;
 }
 
 ul {             

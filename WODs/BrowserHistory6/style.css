@@ -1,0 +1,38 @@
+h1, h2 {
+    font-family: Oswald, sans-serif;
+}
+
+p {
+   font-family: Open Sans, sans-serif; 
+   display: inline-block;
+}
+
+body {
+    color: yellow;
+    margin: auto;
+    max-width: 950px;
+    background-color: black;
+}
+
+img {
+    vertical-align: middle;
+}
+
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   display: flex; 
+   justify-content: space-evenly;
+}
+
+li {
+    display: inline;
+    size: 950px;
+}
+
+.container {
+    display: flex;
+    column-gap: 10px;
+    box-sizing: border-box;
+}
