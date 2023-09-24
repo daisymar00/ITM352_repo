@@ -6,14 +6,13 @@
         Hits:<span id="hits_span">0</span>
         Spins:<span id="spins_span">0</span>
         Hit/Spin:<span id="hit_spin_span">0</span><br>
-        Win: <span id="win_span">pending...</span>
+        You win: <span id="win_span">pending...</span>
     </p>
     <link rel="stylesheet" type="text/css" href="products-style6.css">
 </head>
 
 <body>
     <h1><span id="top_title"></span></h1>
-
     <div>
         <main class="main">
             <section class="item" onmouseover="changeClassName(this); spins_span.innerHTML = spins++; hit_spin_span.innerHTML = (hits/spins).toFixed(2);" onclick="resetClassName(this); hits_span.innerHTML = hits++; hit_spin_span.innerHTML = (hits/spins).toFixed(2);">
