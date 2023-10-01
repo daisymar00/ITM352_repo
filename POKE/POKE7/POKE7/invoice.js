@@ -37,7 +37,6 @@ if (subtotal <= 50) {
     shippingCharge = subtotal * 0.05;
 }
 
-
 // Variable for tax rate
 let tax_rate = 0.0575;
 let taxAmount = subtotal * tax_rate;
