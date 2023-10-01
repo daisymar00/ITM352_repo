@@ -4,11 +4,11 @@ table {
 }
 
 table, td {
-    border: 1 px solid black;
+    border: 1px solid black;
 }
 
 th, td {
-    padding: 8px;
+    padding: 1px;
     text-align: left;
 }
 
