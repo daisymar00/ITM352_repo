@@ -36,7 +36,15 @@ function validateQuantity(quantity) {
 }
 
 function displayPurchase() {
-    let quantity = Number(document.getElementById('qty_textbox_message').value);
+    let quantity = Number(document.getElementById(`qty_textbox`).value);
 
     let validMessage = validateQuantity(quantity);
+
+    if (validMessage == "") {
+        let message = `Thank you for ordering ${quantity} things!`;
+        document.body.innerHTML = message;
+    } else {
+        alert(validMessage + "Please enter a positive integer for quantity.");
+        document.getElementById(`qty_textbook`).value = "";
+    }
 }
