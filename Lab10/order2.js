@@ -29,7 +29,7 @@ function validateQuantity(quantity) {
             errorMessage = "Not an integer. Please enter a non-negative quantity to order.";
             break;
         default:
-            errorMessage = ""; // No errors
+            errorMessage = " "; // No errors
             break;
     }
     return errorMessage;
@@ -40,7 +40,7 @@ function displayPurchase() {
 
     let validMessage = validateQuantity(quantity);
 
-    if (validMessage == "") {
+    if (validMessage == " ") {
         let message = `Thank you for ordering ${quantity} things!`;
         document.body.innerHTML = message;
     } else {
