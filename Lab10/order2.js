@@ -19,13 +19,13 @@ function validateQuantity(quantity) {
         case isNaN(quantity):
             errorMessage = "Not a number. Please enter a non negatibe quantity to order.";
             break;
-        case quantity < 0 && Number.isInteger(quantity):
+        case quantity < 0 && !Number.isInteger(quantity):
             errorMessage = "Negative inventory and not an integer. Please enter a non negative quantity to order.";
             break;
         case quantity <= 0:
             errorMessage = "Negative inventory. Please enter a non negative quantity to order.";
             break;
-        case Number.isInteger(quantity):
+        case !Number.isInteger(quantity):
             errorMessage = "Not an integer. Please enter a non-negative quantity to order.";
             break;
         default:
@@ -33,4 +33,10 @@ function validateQuantity(quantity) {
             break;
     }
     return errorMessage;
+}
+
+function displayPurchase() {
+    let quantity = Number(document.getElementById('qty_textbox_message').value);
+
+    let validMessage = validateQuantity(quantity);
 }
