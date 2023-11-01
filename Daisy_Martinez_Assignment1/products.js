@@ -1,10 +1,7 @@
-// Product.js
-let quantity = [2, "cat", 1.5, -1.5, 0];
+// product.js 
+let quantity = [2, 8, 5, 1, 10];
 
-
-
-
-
+// 
 let itemData = [
 {
     brand: 'HTC',
@@ -32,7 +29,6 @@ let itemData = [
     quantityIndex: 4,
 }
 ]
-
 
 // Added for lab 8 part 1.2, an object to represent the attributes of product 1
 let extended_price1 = product1.quantity * product1.price;
