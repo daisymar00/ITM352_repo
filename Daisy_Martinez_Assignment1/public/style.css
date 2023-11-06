@@ -7,29 +7,34 @@ body, h1, h2, p {
 /* Apply a background color and set text and link styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f8eee7;
     color: #333;
 }
 
 /* Style the header with a background color and center text */
-header {
-    background-color: #333;
+.header {
+    background-color: #49274a;
     color: #fff;
     text-align: center;
-    padding: 1rem;
+    padding-top: 15px;
 }
 
-
+.header a:hover {
+    background-color: #ffd2f4;
+    color: black;
+  }
 
 /* Style the navigation menu */
 nav ul {
-    list-style: none;
-    display: flex;
-    background-color: #444;
+    padding: 10px;
+    background-color: #94618e;
 }
 
 nav li {
-    margin: 0.5rem;
+    margin: 15px;
+    display:inline;
+    
+    font-size: 100%;
 }
 
 nav a {
@@ -39,7 +44,7 @@ nav a {
 
 /* Style the main content area */
 main {
-    padding: 1rem;
+    padding: 20px;
 }
 
 /* Style the sections with background and padding */
