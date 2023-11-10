@@ -15,16 +15,19 @@ const product3 = {
     price: 29.00,
     image: "house.jpg",
 };
+
 const product4 = {
     name: "Omar Apollo - Ivory",
     price: 29.00,
     image: "ivory.jpg",
 };
+
 const product5 = {
     name: "Amaarae - Fountain Baby",
     price: 29.00,
     image: "fb.jpg",
 };
+
 const products = [product1, product2, product3, product4, product5];
 
 window.onload = function () {
@@ -44,7 +47,7 @@ window.onload = function () {
 
     // A for loop to print the product information and then add a quantity text input box for every element
     for (let i in products) {
-        formHTML += `<h3>${products[i]["brand"]} at \$${products[i]["price"]} (${products[i]["total_sold"]} sold)</h3>`;
+        formHTML += `<h3>${products[i]["name"]} at \$${products[i]["price"]} (${products[i]["total_sold"]} sold)</h3>`;
         formHTML += `
         <label for="quantity_textbox">quantity desired:</label>
         <input type="text" name="quantity_textbox[${i}]" onkeyup="checkQuantityTextbox(this);">
@@ -79,4 +82,3 @@ function validateQuantity(quantity) {
     }
 return errorMessage;
 }
-

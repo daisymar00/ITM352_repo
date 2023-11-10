@@ -14,7 +14,7 @@ app.all('*', function (request, response, next) {
 __dirname represents the directory of the current module (where server.js is located)
 __dirname + "./products.json" specifies the location of products.json
 */
-let products = require(__dirname + "./products.json");
+let products = require(__dirname + "/products.json");
 products.forEach( (prod,i) => {prod.total_sold = 0});
 
 
