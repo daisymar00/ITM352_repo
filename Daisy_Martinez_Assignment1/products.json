@@ -1,16 +1,37 @@
 [
     {
-        "model": "Apple iPhone 15 Pro Max",
-        "price": 1199.00,
-        "image": "product_image.jpg",
-        "description": " ",
+        "model": "Un Verano Sin Ti",
+        "price": 39.00,
+        "image": "bb.jpg",
+        "description": "Bad Bunny - Un Verano Sin Ti",
         "qty_available": 5
     },
     {
-        "model": "Samsung Galaxy Z Flip5",
-		"price": 999.99,
-		"image": "SamsungZFlip",
-        "description": " ",
+        "model": "CTRL Deluxe",
+		"price": 29.99,
+		"image": "ctrl.jpg",
+        "description": "SZA - CTRL (deluxe)",
+		"qty_available": 4
+    },
+    {
+        "model": "The House is Burning",
+		"price": 29.99,
+		"image": "house.jpg",
+        "description": "Isiah Rashad - The House is Burning",
 		"qty_available": 3
+    },
+    {
+        "model": "Ivory",
+		"price": 29.99,
+		"image": "ivory.jpg",
+        "description": "Omar Apollo - Ivory",
+		"qty_available": 2
+    },
+    {
+        "model": "Fountain Baby",
+		"price": 29.99,
+		"image": "fb.jpg",
+        "description": "Amaarae - Fountain Baby",
+		"qty_available": 1
     }
 ]

@@ -6,7 +6,7 @@ body, h1, h2, p {
 
 /* Apply a background color and set text and link styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif;
     background-color: #f8eee7;
     color: #333;
 }
@@ -16,13 +16,17 @@ body {
     background-color: #49274a;
     color: #fff;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 18px;
 }
 
 .header a:hover {
     background-color: #ffd2f4;
     color: black;
-  }
+}
+
+.home {
+    margin: 5px;
+}
 
 /* Style the navigation menu */
 nav ul {
@@ -33,7 +37,6 @@ nav ul {
 nav li {
     margin: 15px;
     display:inline;
-    
     font-size: 100%;
 }
 
