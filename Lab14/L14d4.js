@@ -32,7 +32,8 @@ users_reg_data[username] = {};
 users_reg_data[username].password = 'newpass';
 users_reg_data[username].email = 'newuser@user.com';
 
-fs.writeFileSync(filename, JSON.stringify(users_reg_data), 'utf-8')
+fs.writeFileSync(filename, JSON.stringify(users_reg_data, null, 1), 'utf-8');
+
 
 app.use(express.urlencoded({ extended: true }));
 
