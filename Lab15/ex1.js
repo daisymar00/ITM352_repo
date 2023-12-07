@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const fs = require('fs');
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -7,27 +8,33 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 const session = require('express-session');
-
 app.use(session({secret: "MySecretKey", resave: true, saveUninitialized: true}));
+const filename = 'user_data.json';
 
-app.get ('/set_cookie', (req, res) => {
+let user_reg_data = {};
+if (fs.existsSync(filename)) {
+    const rawdata = fs.readFileSync(filename);
+    user_reg_data = JSON.parse(rawdata);
+}
+
+app.get('/set_cookie', (req, res) => {
     res.cookie('username', 'Daisy', {maxAge: 10000});
     res.send('A Cookie with your name has been set');
 });
 
-app.get ('/use_cookie', (req, res) => {
+app.get('/use_cookie', (req, res) => {
     let username = req.cookies.username;
     res.send(`Welcome to the Use Cookie page, ${username}`);
 });
 
-app.get ('use_sesion', (req, res) => {
+app.get('/use_sesion', (req, res) => {
     res.send(`Welcome, your session iD is ${req.session.id}.`);
 });
 
-app.get ("/login", function (request, response) {
+app.get("/login", function (request, response) {
 
     // Give a simple login form
-    str = `
+    const str = `
         <script>
             let params = (new URL(document.location)).searchParams;
             window.onload = function() {
@@ -50,7 +57,7 @@ app.get ("/login", function (request, response) {
     `;
     let username = request.cookies.username ||'';
     if (username.length != 0) {
-        document.getElementById("welcome") = `Welcome ${username}`;
+        response.send(`<p>Welcome ${username}</p>`);
     }
     response.send(str);
 });
@@ -110,7 +117,8 @@ app.get("/register", function (request, response) {
         <script>
             let params = (new URL(document.location)).searchParams;
             window.onload = function() {
-                if (params.has('error)) {
+                if (params.has('error') {
+ {
                     reg_form['username'].value = params.get('username');
                     reg_form['email'].value = params.get('email');
                     reg_form['name'].value = params.get('name');

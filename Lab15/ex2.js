@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const fs = require('fs');
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -7,8 +8,14 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 const session = require('express-session');
-
 app.use(session({secret: "MySecretKey", resave: true, saveUninitialized: true}));
+const filename = 'user_data.json';
+
+let user_reg_data = {};
+if (fs.existsSync(filename)) {
+    const rawdata = fs.readFileSync(filename);
+    user_reg_data = JSON.parse(rawdata);
+}
 
 app.get ('/set_cookie', (req, res) => {
     res.cookie('username', 'Daisy', {maxAge: 10000});
@@ -52,7 +59,7 @@ app.get ("/login", function (request, response) {
     `;
     let username = request.cookies.username ||'';
     if (username.length != 0) {
-        document.getElementById("welcome") = `Welcome ${username}`;
+        response.send(`<p>Welcome ${username}</p>`);
     }
     response.send(str);
 });
@@ -112,7 +119,8 @@ app.get("/register", function (request, response) {
         <script>
             let params = (new URL(document.location)).searchParams;
             window.onload = function() {
-                if (params.has('error)) {
+                if (params.has('error') {
+ {
                     reg_form['username'].value = params.get('username');
                     reg_form['email'].value = params.get('email');
                     reg_form['name'].value = params.get('name');

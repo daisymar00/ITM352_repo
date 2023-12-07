@@ -1,37 +1,40 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
+let user_reg_data = {}; 
+const filename = 'user_data.json';
 
 app.use(express.urlencoded({ extended: true }));
+
+if (fs.existsSync(filename)) {
+    const rawdata = fs.readFileSync(filename);
+    user_reg_data = JSON.parse(rawdata);
+}
 
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 const session = require('express-session');
-app.use(session({secret: "MySecretKey", resave: true, saveUninitialized: true}));
-const filename = 'user_data.json';
 
-let user_reg_data = {};
-if (fs.existsSync(filename)) {
-    const rawdata = fs.readFileSync(filename);
-    user_reg_data = JSON.parse(rawdata);
-}
-app.get ('/set_cookie', (req, res) => {
+app.use(session({secret: "MySecretKey", resave: true, saveUninitialized: true}));
+
+app.get('/set_cookie', (req, res) => {
     res.cookie('username', 'Daisy', {maxAge: 10000});
     res.send('A Cookie with your name has been set');
 });
 
-app.get ('/use_cookie', (req, res) => {
+app.get('/use_cookie', (req, res) => {
     let username = req.cookies.username;
     res.send(`Welcome to the Use Cookie page, ${username}`);
 });
 
 app.get('/use_session', (req, res) => {
     res.send(`Welcome, your session ID is ${req.session.id}.`);
+    req.session.destroy();
 });
 
 
-app.get ("/login", function (request, response) {
+app.get("/login", function (request, response) {
     //if (username.length != 0) {}
 
     // Give a simple login form
@@ -96,17 +99,16 @@ app.post("/login", function (request, response) {
             
             //response_msg = `${username_entered} is logged in.`;
             response.cookie('username', `${username_entered}`);
-            const userSession = request.session;
-
             console.log('Login cookie has been sent.');
 
+            const userSession = request.session;
             // If there is no last login information
             if (!userSession.lastLogin) {
-                userSession.lastLogin = "First session";  
+                userSession.lastLogin = "First session yessuh";  
             } else {
                 userSession.lastLogin = new Date().toLocaleString();
             }
-            response_msg = `${username_entered} is logged in . Last login: ${userSession.lastLogin}`;
+            response_msg = `${username_entered} is logged in. Last login: ${userSession.lastLogin}`;
             errors = true;
         } else {
             response_msg = `Incorrect password.`;
@@ -135,7 +137,6 @@ app.get("/register", function (request, response) {
             let params = (new URL(document.location)).searchParams;
             window.onload = function() {
                 if (params.has('error') {
- {
                     reg_form['username'].value = params.get('username');
                     reg_form['email'].value = params.get('email');
                     reg_form['name'].value = params.get('name');
